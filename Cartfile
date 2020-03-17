@@ -3,3 +3,6 @@ github "appium/RoutingHTTPServer"
 
 # Used by the element cache
 github "appium/YYCache"
+
+# Socket.io
+github "socketio/socket.io-client-swift" ~> 15.2.0
