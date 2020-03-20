@@ -56,6 +56,13 @@ const struct FBWDOrientationValues FBWDOrientationValues = {
   return FBResponseWithObject([[self _wdOrientationsMapping] objectForKey:orientation]);
 }
 
++ (NSString *)socketGetOrientation
+{
+  FBApplication *application = FBApplication.fb_activeApplication;
+  NSString *orientation = [self.class interfaceOrientationForApplication:application];
+  return [[self _wdOrientationsMapping] objectForKey:orientation] ?: NSNull.null;
+}
+
 + (id<FBResponsePayload>)handleSetOrientation:(FBRouteRequest *)request
 {
   FBSession *session = request.session;

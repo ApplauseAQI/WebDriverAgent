@@ -10,10 +10,13 @@
 #import <Foundation/Foundation.h>
 
 #import <WebDriverAgentLib/FBCommandHandler.h>
+#import <WebDriverAgentLib/FBSession.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FBOrientationCommands : NSObject <FBCommandHandler>
+
++ (NSString *)socketGetOrientation;
 
 @end
 

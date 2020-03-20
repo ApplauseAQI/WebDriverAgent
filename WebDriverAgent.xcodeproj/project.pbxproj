@@ -18,6 +18,20 @@
 		31EC77FD224F7D0600380FCD /* XCUIApplicationProcessQuiescence.h in Headers */ = {isa = PBXBuildFile; fileRef = 31EC77FA224F7D0600380FCD /* XCUIApplicationProcessQuiescence.h */; };
 		31EC77FE224F7D0600380FCD /* XCUIApplicationProcessQuiescence.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EC77FB224F7D0600380FCD /* XCUIApplicationProcessQuiescence.m */; };
 		31EC77FF224F7D0600380FCD /* XCUIApplicationProcessQuiescence.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EC77FB224F7D0600380FCD /* XCUIApplicationProcessQuiescence.m */; };
+		36AA6DCF242151D600287C9B /* APSocketIoClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 36AA6DCD242151D600287C9B /* APSocketIoClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36AA6DD0242151D600287C9B /* APSocketIoClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 36AA6DCD242151D600287C9B /* APSocketIoClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36AA6DD1242151D600287C9B /* APSocketIoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AA6DCE242151D600287C9B /* APSocketIoClient.m */; };
+		36AA6DD2242151D600287C9B /* APSocketIoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AA6DCE242151D600287C9B /* APSocketIoClient.m */; };
+		36AA6DF024216FC400287C9B /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DEE24216FC400287C9B /* SocketIO.framework */; };
+		36AA6DF124216FC400287C9B /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DEF24216FC400287C9B /* Starscream.framework */; };
+		36AA6DF424216FDF00287C9B /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DF224216FDE00287C9B /* Starscream.framework */; };
+		36AA6DF524216FDF00287C9B /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DF324216FDF00287C9B /* SocketIO.framework */; };
+		36AA6DF62421701B00287C9B /* SocketIO.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DEE24216FC400287C9B /* SocketIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36AA6DF72421701B00287C9B /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DEF24216FC400287C9B /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36AA6DF82421702200287C9B /* SocketIO.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DF324216FDF00287C9B /* SocketIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36AA6DF92421702200287C9B /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DF224216FDE00287C9B /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36C53027242289310058E630 /* APSocketIoClient.h in Sources */ = {isa = PBXBuildFile; fileRef = 36AA6DCD242151D600287C9B /* APSocketIoClient.h */; };
+		36C53028242289A30058E630 /* APSocketIoClient.h in Sources */ = {isa = PBXBuildFile; fileRef = 36AA6DCD242151D600287C9B /* APSocketIoClient.h */; };
 		6385F4A7220A40760095BBDB /* XCUIApplicationProcessDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 6385F4A5220A40760095BBDB /* XCUIApplicationProcessDelay.m */; };
 		63CCF91221ECE4C700E94ABD /* FBImageIOScaler.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CCF91021ECE4C700E94ABD /* FBImageIOScaler.h */; };
 		63CCF91321ECE4C700E94ABD /* FBImageIOScaler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCF91121ECE4C700E94ABD /* FBImageIOScaler.m */; };
@@ -785,6 +799,8 @@
 			files = (
 				7155B41E224D5B750042A993 /* RoutingHTTPServer.framework in Copy Frameworks */,
 				7155B41F224D5B770042A993 /* YYCache.framework in Copy Frameworks */,
+				36AA6DF82421702200287C9B /* SocketIO.framework in Copy Frameworks */,
+				36AA6DF92421702200287C9B /* Starscream.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,6 +826,8 @@
 			files = (
 				AD35D01A1CF1418E00870A75 /* RoutingHTTPServer.framework in Copy Frameworks */,
 				715D5777224DE17E00DA2D99 /* YYCache.framework in Copy Frameworks */,
+				36AA6DF62421701B00287C9B /* SocketIO.framework in Copy Frameworks */,
+				36AA6DF72421701B00287C9B /* Starscream.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -824,6 +842,12 @@
 		1FC3B2E12121EC8C00B61EE0 /* FBApplicationProcessProxyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBApplicationProcessProxyTests.m; sourceTree = "<group>"; };
 		31EC77FA224F7D0600380FCD /* XCUIApplicationProcessQuiescence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCUIApplicationProcessQuiescence.h; sourceTree = "<group>"; };
 		31EC77FB224F7D0600380FCD /* XCUIApplicationProcessQuiescence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCUIApplicationProcessQuiescence.m; sourceTree = "<group>"; };
+		36AA6DCD242151D600287C9B /* APSocketIoClient.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = APSocketIoClient.h; sourceTree = "<group>"; tabWidth = 2; };
+		36AA6DCE242151D600287C9B /* APSocketIoClient.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = APSocketIoClient.m; sourceTree = "<group>"; tabWidth = 2; };
+		36AA6DEE24216FC400287C9B /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = Carthage/Build/iOS/SocketIO.framework; sourceTree = "<group>"; };
+		36AA6DEF24216FC400287C9B /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		36AA6DF224216FDE00287C9B /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/tvOS/Starscream.framework; sourceTree = "<group>"; };
+		36AA6DF324216FDF00287C9B /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = Carthage/Build/tvOS/SocketIO.framework; sourceTree = "<group>"; };
 		44757A831D42CE8300ECF35E /* XCUIDeviceRotationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCUIDeviceRotationTests.m; sourceTree = "<group>"; };
 		631B523421F6174300625362 /* FBImageIOScalerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBImageIOScalerTests.m; sourceTree = "<group>"; };
 		633E904A220DEE7F007CADF9 /* XCUIApplicationProcessDelay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCUIApplicationProcessDelay.h; sourceTree = "<group>"; };
@@ -1237,11 +1261,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7155B414224D5B170042A993 /* XCTest.framework in Frameworks */,
+				36AA6DF424216FDF00287C9B /* Starscream.framework in Frameworks */,
 				7155B41C224D5B5D0042A993 /* libxml2.tbd in Frameworks */,
 				7155B41B224D5B5A0042A993 /* libAccessibility.tbd in Frameworks */,
 				7155B41D224D5B6C0042A993 /* YYCache.framework in Frameworks */,
 				7155B427224D5C170042A993 /* XCTAutomationSupport.framework in Frameworks */,
 				641EE7192240DFC100173FCB /* RoutingHTTPServer.framework in Frameworks */,
+				36AA6DF524216FDF00287C9B /* SocketIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1259,8 +1285,10 @@
 			files = (
 				7155B40E224D5A850042A993 /* libAccessibility.tbd in Frameworks */,
 				AD35D0641CF1C2C300870A75 /* RoutingHTTPServer.framework in Frameworks */,
+				36AA6DF024216FC400287C9B /* SocketIO.framework in Frameworks */,
 				7155B424224D5BA10042A993 /* XCTest.framework in Frameworks */,
 				716C9347224D540C004B8542 /* libxml2.tbd in Frameworks */,
+				36AA6DF124216FC400287C9B /* Starscream.framework in Frameworks */,
 				7155B40D224D5A5F0042A993 /* YYCache.framework in Frameworks */,
 				7155B426224D5C130042A993 /* XCTAutomationSupport.framework in Frameworks */,
 			);
@@ -1375,6 +1403,8 @@
 		716C9340224D5358004B8542 /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				36AA6DF324216FDF00287C9B /* SocketIO.framework */,
+				36AA6DF224216FDE00287C9B /* Starscream.framework */,
 				7155B425224D5C130042A993 /* XCTAutomationSupport.framework */,
 				7155B41A224D5B480042A993 /* libAccessibility.tbd */,
 				7155B419224D5B460042A993 /* libxml2.tbd */,
@@ -1388,6 +1418,8 @@
 		716C9341224D5369004B8542 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				36AA6DEE24216FC400287C9B /* SocketIO.framework */,
+				36AA6DEF24216FC400287C9B /* Starscream.framework */,
 				7155B423224D5B980042A993 /* XCTest.framework */,
 				7155B40C224D5A5F0042A993 /* YYCache.framework */,
 				716C9344224D53FC004B8542 /* XCTAutomationSupport.framework */,
@@ -1586,6 +1618,8 @@
 		EE9AB7741CAEDF0C008C271F /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				36AA6DCD242151D600287C9B /* APSocketIoClient.h */,
+				36AA6DCE242151D600287C9B /* APSocketIoClient.m */,
 				EE9AB7751CAEDF0C008C271F /* FBCommandHandler.h */,
 				EE9AB7761CAEDF0C008C271F /* FBCommandStatus.h */,
 				71B155DB230711E900646AFB /* FBCommandStatus.m */,
@@ -1988,6 +2022,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36AA6DD0242151D600287C9B /* APSocketIoClient.h in Headers */,
 				641EE6312240C5CA00173FCB /* XCUIElement+FBWebDriverAttributes.h in Headers */,
 				641EE6322240C5CA00173FCB /* FBScreen.h in Headers */,
 				641EE6332240C5CA00173FCB /* XCTestPrivateSymbols.h in Headers */,
@@ -2309,6 +2344,7 @@
 				EE158AEA1CBD456F00A3E3F0 /* FBRuntimeUtils.h in Headers */,
 				7136A4791E8918E60024FC3D /* XCUIElement+FBPickerWheel.h in Headers */,
 				EE35AD511E3B77D600A02D78 /* XCTestObservation-Protocol.h in Headers */,
+				36AA6DCF242151D600287C9B /* APSocketIoClient.h in Headers */,
 				EE35AD131E3B77D600A02D78 /* _XCTNSPredicateExpectationImplementation.h in Headers */,
 				EE158ABE1CBD456F00A3E3F0 /* FBElementCommands.h in Headers */,
 				EE158AF71CBD456F00A3E3F0 /* FBSpringboardApplication.h in Headers */,
@@ -2627,12 +2663,11 @@
 			};
 			buildConfigurationList = 91F9DAE41B99DBC2001349B2 /* Build configuration list for PBXProject "WebDriverAgent" */;
 			compatibilityVersion = "Xcode 10.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
-				English,
 			);
 			mainGroup = 91F9DAE01B99DBC2001349B2;
 			productRefGroup = 91F9DAEA1B99DBC2001349B2 /* Products */;
@@ -2740,6 +2775,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C53028242289A30058E630 /* APSocketIoClient.h in Sources */,
 				641EE5D72240C5CA00173FCB /* FBScreenshotCommands.m in Sources */,
 				641EE5D82240C5CA00173FCB /* FBPredicate.m in Sources */,
 				641EE5D92240C5CA00173FCB /* XCUIElement+FBPickerWheel.m in Sources */,
@@ -2811,6 +2847,7 @@
 				641EE6162240C5CA00173FCB /* FBSessionCommands.m in Sources */,
 				641EE6182240C5CA00173FCB /* XCElementSnapshot+FBHitPoint.m in Sources */,
 				641EE6192240C5CA00173FCB /* FBConfiguration.m in Sources */,
+				36AA6DD2242151D600287C9B /* APSocketIoClient.m in Sources */,
 				641EE61A2240C5CA00173FCB /* FBElementCache.m in Sources */,
 				641EE61B2240C5CA00173FCB /* FBPasteboard.m in Sources */,
 				641EE61C2240C5CA00173FCB /* FBAlert.m in Sources */,
@@ -2842,6 +2879,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C53027242289310058E630 /* APSocketIoClient.h in Sources */,
 				EE158AC71CBD456F00A3E3F0 /* FBScreenshotCommands.m in Sources */,
 				EEEC7C931F21F27A0053426C /* FBPredicate.m in Sources */,
 				7136A47A1E8918E60024FC3D /* XCUIElement+FBPickerWheel.m in Sources */,
@@ -2914,6 +2952,7 @@
 				EE158AC91CBD456F00A3E3F0 /* FBSessionCommands.m in Sources */,
 				EE006EB11EBA1AA9006900A4 /* XCElementSnapshot+FBHitPoint.m in Sources */,
 				EE9B76A71CF7A43900275851 /* FBConfiguration.m in Sources */,
+				36AA6DD1242151D600287C9B /* APSocketIoClient.m in Sources */,
 				EE158AD31CBD456F00A3E3F0 /* FBElementCache.m in Sources */,
 				71930C4320662E1F00D3AFEC /* FBPasteboard.m in Sources */,
 				AD6C26951CF2379700F8B5FF /* FBAlert.m in Sources */,
@@ -3182,6 +3221,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(PLATFORM_DIR)/Developer/Library/PrivateFrameworks",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = WebDriverAgentLib/Info.plist;
@@ -3242,6 +3282,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(PLATFORM_DIR)/Developer/Library/PrivateFrameworks",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = WebDriverAgentLib/Info.plist;
@@ -3490,6 +3531,8 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(PLATFORM_DIR)/Developer/Library/PrivateFrameworks",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = WebDriverAgentLib/Info.plist;
@@ -3548,6 +3591,8 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(PLATFORM_DIR)/Developer/Library/PrivateFrameworks",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = WebDriverAgentLib/Info.plist;

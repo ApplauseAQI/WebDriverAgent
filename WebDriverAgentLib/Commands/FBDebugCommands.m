@@ -28,6 +28,7 @@
     [[FBRoute GET:@"/source"].withoutSession respondWithTarget:self action:@selector(handleGetSourceCommand:)],
     [[FBRoute GET:@"/wda/accessibleSource"] respondWithTarget:self action:@selector(handleGetAccessibleSourceCommand:)],
     [[FBRoute GET:@"/wda/accessibleSource"].withoutSession respondWithTarget:self action:@selector(handleGetAccessibleSourceCommand:)],
+    [[FBRoute GET:@"/ws/push"].withoutSession respondWithTarget:self action:@selector(handlePushSocketIoTestMessage:)],
   ];
 }
 
@@ -37,6 +38,11 @@
 static NSString *const SOURCE_FORMAT_XML = @"xml";
 static NSString *const SOURCE_FORMAT_JSON = @"json";
 static NSString *const SOURCE_FORMAT_DESCRIPTION = @"description";
+
++ (id<FBResponsePayload>)handlePushSocketIoTestMessage:(FBRouteRequest *)request
+{
+  return FBResponseWithOK();
+}
 
 + (id<FBResponsePayload>)handleGetSourceCommand:(FBRouteRequest *)request
 {
@@ -63,6 +69,16 @@ static NSString *const SOURCE_FORMAT_DESCRIPTION = @"description";
     return FBResponseWithUnknownErrorFormat(@"Cannot get '%@' source of the current application", sourceType);
   }
   return FBResponseWithObject(result);
+}
+
++ (NSString *)socketGetSourceCommand
+{
+  // This method might be called without session
+  FBApplication *application = FBApplication.fb_activeApplication;
+  
+  id result = application.fb_xmlRepresentation;
+  
+  return result ?: NSNull.null;
 }
 
 + (id<FBResponsePayload>)handleGetAccessibleSourceCommand:(FBRouteRequest *)request
