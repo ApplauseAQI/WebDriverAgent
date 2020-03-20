@@ -1,9 +1,15 @@
-[*.h]
-indent_size = 2
-indent_style = space
-ij_continuation_indent_size = 2
+# EditorConfig is awesome: https://EditorConfig.org
 
-[*.m]
+# top-most EditorConfig file
+root = true
+
+# Base
+[*]
+insert_final_newline = true
+max_line_length = 120
+
+# Objective C
+[*.{h,m}]
 indent_size = 2
 indent_style = space
 ij_continuation_indent_size = 2
