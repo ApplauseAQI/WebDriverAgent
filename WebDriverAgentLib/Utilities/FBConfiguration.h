@@ -87,6 +87,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setScreenshotQuality:(NSUInteger)quality;
 
 /**
+ The socket.io server the device will attempt to connect to on startup
+ */
++ (NSString*)socketIoHost;
+
+/**
  The range of ports that the HTTP Server should attempt to bind on launch
  */
 + (NSRange)bindingPortRange;

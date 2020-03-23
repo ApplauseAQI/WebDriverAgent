@@ -2,7 +2,7 @@
 #import <Foundation/Foundation.h>
 @import SocketIO;
 
-@interface APSocketIoClient : NSObject
+@interface AQISocketIoClient : NSObject
 
 - (instancetype)init;
 - (void)connect;

@@ -4,14 +4,14 @@
 
 #import <mach/mach_time.h>
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "APSocketIoClient.h"
+#import "AQISocketIoClient.h"
 #import "FBLogger.h"
 #import "FBApplication.h"
 #import "FBConfiguration.h"
 #import "FBSession.h"
 #import "FBImageIOScaler.h"
 #import "FBOrientationCommands.h"
-#import "FBDebugCommands.h"
+#import "AQISourceCommands.h"
 #import "XCUIApplication+FBHelpers.h"
 #import "XCTestManager_ManagerInterface-Protocol.h"
 #import "XCUIElement+FBUtilities.h"
@@ -23,9 +23,9 @@
 static const NSTimeInterval SCREENSHOT_TIMEOUT = 0.5;
 static const NSUInteger MAX_FPS = 60;
 
-static const char *QUEUE_NAME = "JPEG Screenshots Provider Queue";
+static const char *QUEUE_NAME = "Socket Screenshots Provider Queue";
 
-@interface APSocketIoClient()
+@interface AQISocketIoClient()
 
 @property (nonatomic, readonly) BOOL canStreamScreenshots;
 @property (nonatomic) BOOL screenshotsActive;
@@ -38,25 +38,29 @@ static const char *QUEUE_NAME = "JPEG Screenshots Provider Queue";
 
 @end
 
-@implementation APSocketIoClient
+@implementation AQISocketIoClient
 
 - (instancetype)init {
   if ((self = [super init])) {
-    NSURL* url = [[NSURL alloc] initWithString:@"http://localhost:3000"];
-    _manager = [[SocketManager alloc] initWithSocketURL:url config:@{@"log": @YES, @"compress": @YES}];
+    NSURL* url = [[NSURL alloc] initWithString:[FBConfiguration socketIoHost]];
+    [FBLogger log:[NSString stringWithFormat:@"Connecting to socketIO server at: %@", url]];
+    _manager = [[SocketManager alloc] initWithSocketURL:url config:@{@"log": @NO, @"compress": @YES}];
     _socket = self.manager.defaultSocket;
     _screenshotsActive = NO;
     _canStreamScreenshots = [[self class] testStreamScreenshots];
-    
+
     dispatch_queue_attr_t queueAttributes = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_UTILITY, 0);
     _backgroundQueue = dispatch_queue_create(QUEUE_NAME, queueAttributes);
     mach_timebase_info(&_timebaseInfo);
     _imageScaler = [[FBImageIOScaler alloc] init];
   }
-  
+
   return self;
 }
 
+/**
+* validate if device is capable of streaming screenshots
+*/
 + (BOOL)testStreamScreenshots
 {
   static dispatch_once_t onceCanStream;
@@ -67,33 +71,43 @@ static const char *QUEUE_NAME = "JPEG Screenshots Provider Queue";
   return result;
 }
 
+/**
+* set up client's SocketIO message handlers
+*/
 - (void)setupHandlers
 {
   [self.socket on:@"connected" callback:^(NSArray* data, SocketAckEmitter* ack) {
-    [FBLogger log:@">>>>>> CONNECTED <<<<<<<"];
-    [self.socket emit:@"join" with:@[@{ @"type": @"device"}]];
+    // join device queue automatically on connection for broadcasting data
+    [self.socket emit:@"join"
+                 with:@[@{ @"type": @"device" }]];
   }];
-  
+
   [self.socket on:@"setScreenshots" callback:^(NSArray * data, SocketAckEmitter * ack) {
     [FBLogger log:[data description]];
     NSNumber *active = data[0];
     self.screenshotsActive = [active isEqual:(@1)];
     [FBLogger log:self.screenshotsActive ? @"YES" : @"NO"];
   }];
-  
+
   [self.socket on:@"getSource" callback:^(NSArray* data, SocketAckEmitter* ack) {
-    
-    NSString *source = [FBDebugCommands socketGetSourceCommand];
-    [self.socket emit:@"setResponse" with:@[@{ @"type": @"source",
-                                               @"data": source }]];
+
+    NSString *source = [AQISourceCommands socketGetSourceCommand];
+    [self.socket emit:@"setResponse"
+                 with:@[@{
+                   @"type": @"source",
+                   @"data": source
+                 }]];
   }];
-  
+
   [self.socket on:@"getOrientation" callback:^(NSArray * data, SocketAckEmitter * ack) {
-    
+
     NSString *orientation = [FBOrientationCommands socketGetOrientation];
-    
-    [self.socket emit:@"setResponse" with:@[@{ @"type": @"orientation",
-                                               @"data": orientation }]];
+
+    [self.socket emit:@"setResponse"
+                 with:@[@{
+                          @"type": @"orientation",
+                          @"data": orientation
+                 }]];
   }];
 }
 
@@ -191,7 +205,8 @@ static const char *QUEUE_NAME = "JPEG Screenshots Provider Queue";
 - (void)sendScreenshot:(NSData *)screenshotData
 {
   NSString *base64 = [screenshotData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-  [self.socket emit:@"screenshotUpdate" with:@[@{ @"data": base64 }]];
+  [self.socket emit:@"screenshotUpdate"
+               with:@[@{ @"data": base64 }]];
 }
 
 @end

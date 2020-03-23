@@ -20,6 +20,7 @@
 static NSUInteger const DefaultStartingPort = 8100;
 static NSUInteger const DefaultMjpegServerPort = 9100;
 static NSUInteger const DefaultPortRange = 100;
+static NSString *const DefaultSocketIoHost = @"http://localhost:3000";
 
 static char const *const controllerPrefBundlePath = "/System/Library/PrivateFrameworks/TextInput.framework/TextInput";
 static NSString *const controllerClassName = @"TIPreferencesController";
@@ -89,6 +90,21 @@ static UIInterfaceOrientation FBScreenshotOrientation = UIInterfaceOrientationUn
   }
 
   return NSMakeRange(DefaultStartingPort, DefaultPortRange);
+}
+
++ (NSString*)socketIoHost
+{
+  if (self.socketIoHostFromArguments != nil) {
+    return self.socketIoHostFromArguments;
+  }
+  
+  NSString *socketIoEnv = NSProcessInfo.processInfo.environment[@"SOCKET_IO_HOST"];
+  if (socketIoEnv &&
+      [socketIoEnv length] > 0) {
+    return socketIoEnv ? socketIoEnv : DefaultSocketIoHost;
+  }
+
+  return DefaultSocketIoHost;
 }
 
 + (NSInteger)mjpegServerPort
@@ -452,6 +468,17 @@ static UIInterfaceOrientation FBScreenshotOrientation = UIInterfaceOrientationUn
   }
   return port;
 }
+
++ (NSString*)socketIoHostFromArguments
+{
+  NSString *hostString = [self valueFromArguments: NSProcessInfo.processInfo.arguments
+                                                 forKey: @"--socket-io-host"];
+  if ([hostString length] == 0) {
+    return nil;
+  }
+  return hostString;
+}
+
 
 + (NSRange)bindingPortRangeFromArguments
 {

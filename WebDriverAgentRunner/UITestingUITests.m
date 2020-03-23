@@ -14,7 +14,7 @@
 #import <WebDriverAgentLib/FBFailureProofTestCase.h>
 #import <WebDriverAgentLib/FBWebServer.h>
 #import <WebDriverAgentLib/XCTestCase.h>
-#import <WebDriverAgentLib/APSocketIoClient.h>
+#import <WebDriverAgentLib/AQISocketIoClient.h>
 
 @interface UITestingUITests : FBFailureProofTestCase <FBWebServerDelegate>
 @end
@@ -34,7 +34,7 @@
  */
 - (void)testRunner
 {
-  APSocketIoClient *socketClient = [[APSocketIoClient alloc] init];
+  AQISocketIoClient *socketClient = [[AQISocketIoClient alloc] init];
   [socketClient setupHandlers];
   [socketClient connect];
   [socketClient startScreenshotStreaming];
