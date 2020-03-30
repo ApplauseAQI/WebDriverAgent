@@ -24,11 +24,16 @@ static const NSTimeInterval SCREENSHOT_TIMEOUT = 0.5;
 static const NSUInteger MAX_FPS = 60;
 
 static const char *QUEUE_NAME = "Socket Screenshots Provider Queue";
+typedef NS_ENUM(NSUInteger, SocketScreenshotMode) {
+        SocketScreenshotModeBinary,
+        SocketScreenshotModeBase64
+};
 
 @interface AQISocketIoClient()
 
 @property (nonatomic, readonly) BOOL canStreamScreenshots;
 @property (nonatomic) BOOL screenshotsActive;
+@property (nonatomic) SocketScreenshotMode screenshotsMode;
 @property (nonatomic, readonly) SocketManager *manager;
 @property (nonatomic, readonly) SocketIOClient *socket;
 
@@ -44,7 +49,7 @@ static const char *QUEUE_NAME = "Socket Screenshots Provider Queue";
   if ((self = [super init])) {
     NSURL* url = [[NSURL alloc] initWithString:[FBConfiguration socketIoHost]];
     [FBLogger log:[NSString stringWithFormat:@"Connecting to socketIO server at: %@", url]];
-    _manager = [[SocketManager alloc] initWithSocketURL:url config:@{@"log": @NO, @"compress": @YES}];
+    _manager = [[SocketManager alloc] initWithSocketURL:url config:@{@"log": @YES, @"compress": @YES}];
     _socket = self.manager.defaultSocket;
     _screenshotsActive = NO;
     _canStreamScreenshots = [[self class] testStreamScreenshots];
@@ -80,15 +85,30 @@ static const char *QUEUE_NAME = "Socket Screenshots Provider Queue";
     // join device queue automatically on connection for broadcasting data
     [self.socket emit:@"join"
                  with:@[@{ @"type": @"device" }]];
+    [self.socket joinNamespace];
   }];
 
+  // ***************************************
+  // incomming commands from socketIO server
+  // ***************************************
+
+  // set screenshot settings, and turn on/off
   [self.socket on:@"setScreenshots" callback:^(NSArray * data, SocketAckEmitter * ack) {
-    [FBLogger log:[data description]];
-    NSNumber *active = data[0];
-    self.screenshotsActive = [active isEqual:(@1)];
-    [FBLogger log:self.screenshotsActive ? @"YES" : @"NO"];
+    if ([data[0] isKindOfClass:[NSNumber class]]) {
+      self.screenshotsActive = [data[0] isEqual:(@1)];
+      return;
+    } else if (([data[0] isKindOfClass:[NSDictionary class]])) {
+      NSDictionary *settings = data[0];
+      NSNumber *active=settings[@"active"];
+      NSString *mode=settings[@"mode"];
+      self.screenshotsActive = [active isEqual:(@1)];
+      self.screenshotsMode = ([[mode lowercaseString] isEqual:@"base64"]) ? SocketScreenshotModeBase64 : SocketScreenshotModeBinary;
+      return;
+    }
+    [FBLogger log:@"Incompatible type passed to setScreenshots"];
   }];
 
+  // request app ui source
   [self.socket on:@"getSource" callback:^(NSArray* data, SocketAckEmitter* ack) {
 
     NSString *source = [AQISourceCommands socketGetSourceCommand];
@@ -99,6 +119,7 @@ static const char *QUEUE_NAME = "Socket Screenshots Provider Queue";
                  }]];
   }];
 
+  // request app orientation
   [self.socket on:@"getOrientation" callback:^(NSArray * data, SocketAckEmitter * ack) {
 
     NSString *orientation = [FBOrientationCommands socketGetOrientation];
@@ -206,7 +227,7 @@ static const char *QUEUE_NAME = "Socket Screenshots Provider Queue";
 {
   NSString *base64 = [screenshotData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
   [self.socket emit:@"screenshotUpdate"
-               with:@[@{ @"data": base64 }]];
+               with:@[@{ @"data": (self.screenshotsMode == SocketScreenshotModeBase64) ? base64 : screenshotData }]];
 }
 
 @end

@@ -18,14 +18,6 @@
 		31EC77FD224F7D0600380FCD /* XCUIApplicationProcessQuiescence.h in Headers */ = {isa = PBXBuildFile; fileRef = 31EC77FA224F7D0600380FCD /* XCUIApplicationProcessQuiescence.h */; };
 		31EC77FE224F7D0600380FCD /* XCUIApplicationProcessQuiescence.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EC77FB224F7D0600380FCD /* XCUIApplicationProcessQuiescence.m */; };
 		31EC77FF224F7D0600380FCD /* XCUIApplicationProcessQuiescence.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EC77FB224F7D0600380FCD /* XCUIApplicationProcessQuiescence.m */; };
-		3617BC5324256F10003A6B02 /* AQISourceCommands.h in Headers */ = {isa = PBXBuildFile; fileRef = 3617BC5224256F10003A6B02 /* AQISourceCommands.h */; };
-		3617BC5424256F10003A6B02 /* AQISourceCommands.h in Headers */ = {isa = PBXBuildFile; fileRef = 3617BC5224256F10003A6B02 /* AQISourceCommands.h */; };
-		3617BC5624256FAD003A6B02 /* AQISourceCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = 3617BC5524256FAD003A6B02 /* AQISourceCommands.m */; };
-		3617BC5724256FAD003A6B02 /* AQISourceCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = 3617BC5524256FAD003A6B02 /* AQISourceCommands.m */; };
-		36AA6DCF242151D600287C9B /* AQISocketIoClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 36AA6DCD242151D600287C9B /* AQISocketIoClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36AA6DD0242151D600287C9B /* AQISocketIoClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 36AA6DCD242151D600287C9B /* AQISocketIoClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36AA6DD1242151D600287C9B /* AQISocketIoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AA6DCE242151D600287C9B /* AQISocketIoClient.m */; };
-		36AA6DD2242151D600287C9B /* AQISocketIoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AA6DCE242151D600287C9B /* AQISocketIoClient.m */; };
 		36AA6DF024216FC400287C9B /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DEE24216FC400287C9B /* SocketIO.framework */; };
 		36AA6DF124216FC400287C9B /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DEF24216FC400287C9B /* Starscream.framework */; };
 		36AA6DF424216FDF00287C9B /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DF224216FDE00287C9B /* Starscream.framework */; };
@@ -34,8 +26,14 @@
 		36AA6DF72421701B00287C9B /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DEF24216FC400287C9B /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36AA6DF82421702200287C9B /* SocketIO.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DF324216FDF00287C9B /* SocketIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36AA6DF92421702200287C9B /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA6DF224216FDE00287C9B /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		36C53027242289310058E630 /* AQISocketIoClient.h in Sources */ = {isa = PBXBuildFile; fileRef = 36AA6DCD242151D600287C9B /* AQISocketIoClient.h */; };
-		36C53028242289A30058E630 /* AQISocketIoClient.h in Sources */ = {isa = PBXBuildFile; fileRef = 36AA6DCD242151D600287C9B /* AQISocketIoClient.h */; };
+		36C577F724291E64003B637C /* AQISocketIoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C577F524291E63003B637C /* AQISocketIoClient.m */; };
+		36C577F824291E64003B637C /* AQISocketIoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C577F524291E63003B637C /* AQISocketIoClient.m */; };
+		36C577F924291E64003B637C /* AQISocketIoClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C577F624291E63003B637C /* AQISocketIoClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36C577FA24291E64003B637C /* AQISocketIoClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C577F624291E63003B637C /* AQISocketIoClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36C577FE24291E72003B637C /* AQISourceCommands.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C577FC24291E72003B637C /* AQISourceCommands.h */; };
+		36C577FF24291E72003B637C /* AQISourceCommands.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C577FC24291E72003B637C /* AQISourceCommands.h */; };
+		36C5780024291E72003B637C /* AQISourceCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C577FD24291E72003B637C /* AQISourceCommands.m */; };
+		36C5780124291E72003B637C /* AQISourceCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C577FD24291E72003B637C /* AQISourceCommands.m */; };
 		6385F4A7220A40760095BBDB /* XCUIApplicationProcessDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 6385F4A5220A40760095BBDB /* XCUIApplicationProcessDelay.m */; };
 		63CCF91221ECE4C700E94ABD /* FBImageIOScaler.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CCF91021ECE4C700E94ABD /* FBImageIOScaler.h */; };
 		63CCF91321ECE4C700E94ABD /* FBImageIOScaler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCF91121ECE4C700E94ABD /* FBImageIOScaler.m */; };
@@ -846,14 +844,15 @@
 		1FC3B2E12121EC8C00B61EE0 /* FBApplicationProcessProxyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBApplicationProcessProxyTests.m; sourceTree = "<group>"; };
 		31EC77FA224F7D0600380FCD /* XCUIApplicationProcessQuiescence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCUIApplicationProcessQuiescence.h; sourceTree = "<group>"; };
 		31EC77FB224F7D0600380FCD /* XCUIApplicationProcessQuiescence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCUIApplicationProcessQuiescence.m; sourceTree = "<group>"; };
-		3617BC5224256F10003A6B02 /* AQISourceCommands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AQISourceCommands.h; sourceTree = "<group>"; };
-		3617BC5524256FAD003A6B02 /* AQISourceCommands.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQISourceCommands.m; sourceTree = "<group>"; };
-		36AA6DCD242151D600287C9B /* AQISocketIoClient.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = AQISocketIoClient.h; sourceTree = "<group>"; tabWidth = 2; };
-		36AA6DCE242151D600287C9B /* AQISocketIoClient.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; name = AQISocketIoClient.m; path = ../../WebDriverAgentLib/Routing/AQISocketIoClient.m; sourceTree = "<group>"; tabWidth = 2; };
 		36AA6DEE24216FC400287C9B /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = Carthage/Build/iOS/SocketIO.framework; sourceTree = "<group>"; };
 		36AA6DEF24216FC400287C9B /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		36AA6DF224216FDE00287C9B /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/tvOS/Starscream.framework; sourceTree = "<group>"; };
 		36AA6DF324216FDF00287C9B /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = Carthage/Build/tvOS/SocketIO.framework; sourceTree = "<group>"; };
+		36C4DBAA242916E00096D175 /* AQISocketIoClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AQISocketIoClient.m; path = XCTWebDriverAgentLib/Socket/AQISocketIoClient.m; sourceTree = "<group>"; };
+		36C577F524291E63003B637C /* AQISocketIoClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQISocketIoClient.m; sourceTree = "<group>"; };
+		36C577F624291E63003B637C /* AQISocketIoClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQISocketIoClient.h; sourceTree = "<group>"; };
+		36C577FC24291E72003B637C /* AQISourceCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQISourceCommands.h; sourceTree = "<group>"; };
+		36C577FD24291E72003B637C /* AQISourceCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQISourceCommands.m; sourceTree = "<group>"; };
 		44757A831D42CE8300ECF35E /* XCUIDeviceRotationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCUIDeviceRotationTests.m; sourceTree = "<group>"; };
 		631B523421F6174300625362 /* FBImageIOScalerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBImageIOScalerTests.m; sourceTree = "<group>"; };
 		633E904A220DEE7F007CADF9 /* XCUIApplicationProcessDelay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCUIApplicationProcessDelay.h; sourceTree = "<group>"; };
@@ -1355,23 +1354,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3617BC5124256EE2003A6B02 /* SocketCommands */ = {
+		36C577F424291E63003B637C /* Socket */ = {
 			isa = PBXGroup;
 			children = (
-				3617BC5224256F10003A6B02 /* AQISourceCommands.h */,
-				3617BC5524256FAD003A6B02 /* AQISourceCommands.m */,
+				36C577F624291E63003B637C /* AQISocketIoClient.h */,
+				36C577F524291E63003B637C /* AQISocketIoClient.m */,
 			);
-			path = SocketCommands;
-			sourceTree = "<group>";
+			name = Socket;
+			path = WebDriverAgentLib/Socket;
+			sourceTree = SOURCE_ROOT;
 		};
-		3617BC58242570C2003A6B02 /* Socket */ = {
+		36C577FB24291E72003B637C /* SocketCommands */ = {
 			isa = PBXGroup;
 			children = (
-				36AA6DCD242151D600287C9B /* AQISocketIoClient.h */,
-				36AA6DCE242151D600287C9B /* AQISocketIoClient.m */,
+				36C577FC24291E72003B637C /* AQISourceCommands.h */,
+				36C577FD24291E72003B637C /* AQISourceCommands.m */,
 			);
-			path = Socket;
-			sourceTree = "<group>";
+			name = SocketCommands;
+			path = WebDriverAgentLib/SocketCommands;
+			sourceTree = SOURCE_ROOT;
 		};
 		498495C81BB2E6FA009CC848 /* Resources */ = {
 			isa = PBXGroup;
@@ -1457,6 +1458,7 @@
 		91F9DAE01B99DBC2001349B2 = {
 			isa = PBXGroup;
 			children = (
+				36C4DBAA242916E00096D175 /* AQISocketIoClient.m */,
 				EEE5CABE1C80361500CBBDD9 /* Configurations */,
 				91F9DB731B99DDD8001349B2 /* PrivateHeaders */,
 				498495C81BB2E6FA009CC848 /* Resources */,
@@ -1885,8 +1887,8 @@
 		EEC288F81BF0ED2500B4DC79 /* WebDriverAgentLib */ = {
 			isa = PBXGroup;
 			children = (
-				3617BC58242570C2003A6B02 /* Socket */,
-				3617BC5124256EE2003A6B02 /* SocketCommands */,
+				36C577FB24291E72003B637C /* SocketCommands */,
+				36C577F424291E63003B637C /* Socket */,
 				EE9AB73E1CAEDF0C008C271F /* Categories */,
 				EE9AB74F1CAEDF0C008C271F /* Commands */,
 				EE9AB7721CAEDF0C008C271F /* Resources */,
@@ -2046,7 +2048,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36AA6DD0242151D600287C9B /* AQISocketIoClient.h in Headers */,
 				641EE6312240C5CA00173FCB /* XCUIElement+FBWebDriverAttributes.h in Headers */,
 				641EE6322240C5CA00173FCB /* FBScreen.h in Headers */,
 				641EE6332240C5CA00173FCB /* XCTestPrivateSymbols.h in Headers */,
@@ -2076,7 +2077,6 @@
 				641EE6492240C5CA00173FCB /* XCTestProbe.h in Headers */,
 				641EE64A2240C5CA00173FCB /* XCApplicationQuery.h in Headers */,
 				641EE64B2240C5CA00173FCB /* XCTAsyncActivity.h in Headers */,
-				3617BC5424256F10003A6B02 /* AQISourceCommands.h in Headers */,
 				641EE64C2240C5CA00173FCB /* XCTestMisuseObserver.h in Headers */,
 				641EE64D2240C5CA00173FCB /* XCTRunnerDaemonSession.h in Headers */,
 				64B2650B228CE4FF002A5025 /* FBTVNavigationTracker-Private.h in Headers */,
@@ -2204,6 +2204,7 @@
 				641EE6C22240C5CA00173FCB /* XCUIDevice+FBHelpers.h in Headers */,
 				641EE6C32240C5CA00173FCB /* FBClassChainQueryParser.h in Headers */,
 				641EE6C42240C5CA00173FCB /* FBMacros.h in Headers */,
+				36C577FA24291E64003B637C /* AQISocketIoClient.h in Headers */,
 				641EE6C52240C5CA00173FCB /* XCTestExpectationDelegate-Protocol.h in Headers */,
 				641EE6C62240C5CA00173FCB /* XCTUIApplicationMonitor-Protocol.h in Headers */,
 				641EE6C72240C5CA00173FCB /* XCElementSnapshot+FBHelpers.h in Headers */,
@@ -2217,6 +2218,7 @@
 				C845206222D5E79400EA68CB /* FBUnattachedAppLauncher.h in Headers */,
 				641EE6CF2240C5CA00173FCB /* UITapGestureRecognizer-RecordingAdditions.h in Headers */,
 				641EE6D02240C5CA00173FCB /* XCDebugLogDelegate-Protocol.h in Headers */,
+				36C577FF24291E72003B637C /* AQISourceCommands.h in Headers */,
 				641EE6D12240C5CA00173FCB /* NSString-XCTAdditions.h in Headers */,
 				641EE6D22240C5CA00173FCB /* XCTestWaiter.h in Headers */,
 				641EE6D32240C5CA00173FCB /* FBImageUtils.h in Headers */,
@@ -2281,7 +2283,6 @@
 				EE158AE01CBD456F00A3E3F0 /* FBRouteRequest-Private.h in Headers */,
 				EE35AD621E3B77D600A02D78 /* XCTTestRunSession.h in Headers */,
 				EE35AD541E3B77D600A02D78 /* XCTestProbe.h in Headers */,
-				3617BC5324256F10003A6B02 /* AQISourceCommands.h in Headers */,
 				EE35AD281E3B77D600A02D78 /* XCApplicationQuery.h in Headers */,
 				EE35AD3C1E3B77D600A02D78 /* XCTAsyncActivity.h in Headers */,
 				EE35AD501E3B77D600A02D78 /* XCTestMisuseObserver.h in Headers */,
@@ -2370,7 +2371,6 @@
 				EE158AEA1CBD456F00A3E3F0 /* FBRuntimeUtils.h in Headers */,
 				7136A4791E8918E60024FC3D /* XCUIElement+FBPickerWheel.h in Headers */,
 				EE35AD511E3B77D600A02D78 /* XCTestObservation-Protocol.h in Headers */,
-				36AA6DCF242151D600287C9B /* AQISocketIoClient.h in Headers */,
 				EE35AD131E3B77D600A02D78 /* _XCTNSPredicateExpectationImplementation.h in Headers */,
 				EE158ABE1CBD456F00A3E3F0 /* FBElementCommands.h in Headers */,
 				EE158AF71CBD456F00A3E3F0 /* FBSpringboardApplication.h in Headers */,
@@ -2397,6 +2397,7 @@
 				EE35AD0E1E3B77D600A02D78 /* _XCTestExpectationImplementation.h in Headers */,
 				EE35AD291E3B77D600A02D78 /* XCAXClient_iOS.h in Headers */,
 				EE35AD691E3B77D600A02D78 /* XCTWaiterManager.h in Headers */,
+				36C577F924291E64003B637C /* AQISocketIoClient.h in Headers */,
 				EE35AD481E3B77D600A02D78 /* XCTestDriverInterface-Protocol.h in Headers */,
 				648C10AF22AAAE4000B81B9A /* TIPreferencesController.h in Headers */,
 				EE35AD111E3B77D600A02D78 /* _XCTestSuiteImplementation.h in Headers */,
@@ -2441,6 +2442,7 @@
 				71930C4220662E1F00D3AFEC /* FBPasteboard.h in Headers */,
 				714097471FAE1B32008FB2C5 /* FBAppiumActionsSynthesizer.h in Headers */,
 				EE7E271C1D06C69F001BEC7B /* FBDebugLogDelegateDecorator.h in Headers */,
+				36C577FE24291E72003B637C /* AQISourceCommands.h in Headers */,
 				EEDFE1211D9C06F800E6FFE5 /* XCUIDevice+FBHealthCheck.h in Headers */,
 				7155D703211DCEF400166C20 /* FBMjpegServer.h in Headers */,
 				EE35AD761E3B77D600A02D78 /* XCUIRecorderNodeFinderMatch.h in Headers */,
@@ -2801,7 +2803,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C53028242289A30058E630 /* AQISocketIoClient.h in Sources */,
 				641EE5D72240C5CA00173FCB /* FBScreenshotCommands.m in Sources */,
 				641EE5D82240C5CA00173FCB /* FBPredicate.m in Sources */,
 				641EE5D92240C5CA00173FCB /* XCUIElement+FBPickerWheel.m in Sources */,
@@ -2819,7 +2820,6 @@
 				641EE5E32240C5CA00173FCB /* NSExpression+FBFormat.m in Sources */,
 				641EE5E42240C5CA00173FCB /* XCUIApplication+FBHelpers.m in Sources */,
 				641EE5E52240C5CA00173FCB /* FBKeyboard.m in Sources */,
-				3617BC5724256FAD003A6B02 /* AQISourceCommands.m in Sources */,
 				641EE5E62240C5CA00173FCB /* FBElementUtils.m in Sources */,
 				641EE5E72240C5CA00173FCB /* FBW3CActionsSynthesizer.m in Sources */,
 				641EE5E82240C5CA00173FCB /* FBApplicationProcessProxy.m in Sources */,
@@ -2831,6 +2831,7 @@
 				641EE5ED2240C5CA00173FCB /* FBRoute.m in Sources */,
 				641EE5EE2240C5CA00173FCB /* NSString+FBVisualLength.m in Sources */,
 				641EE5EF2240C5CA00173FCB /* FBRunLoopSpinner.m in Sources */,
+				36C5780124291E72003B637C /* AQISourceCommands.m in Sources */,
 				641EE5F02240C5CA00173FCB /* FBAlertsMonitor.m in Sources */,
 				641EE5F12240C5CA00173FCB /* FBClassChainQueryParser.m in Sources */,
 				641EE5F22240C5CA00173FCB /* NSPredicate+FBFormat.m in Sources */,
@@ -2874,7 +2875,6 @@
 				641EE6162240C5CA00173FCB /* FBSessionCommands.m in Sources */,
 				641EE6182240C5CA00173FCB /* XCElementSnapshot+FBHitPoint.m in Sources */,
 				641EE6192240C5CA00173FCB /* FBConfiguration.m in Sources */,
-				36AA6DD2242151D600287C9B /* AQISocketIoClient.m in Sources */,
 				641EE61A2240C5CA00173FCB /* FBElementCache.m in Sources */,
 				641EE61B2240C5CA00173FCB /* FBPasteboard.m in Sources */,
 				641EE61C2240C5CA00173FCB /* FBAlert.m in Sources */,
@@ -2886,6 +2886,7 @@
 				641EE6212240C5CA00173FCB /* FBElementTypeTransformer.m in Sources */,
 				641EE6222240C5CA00173FCB /* FBApplication.m in Sources */,
 				641EE6232240C5CA00173FCB /* FBScreen.m in Sources */,
+				36C577F824291E64003B637C /* AQISocketIoClient.m in Sources */,
 				641EE6242240C5CA00173FCB /* FBXCTestDaemonsProxy.m in Sources */,
 				641EE6252240C5CA00173FCB /* XCUIElement+FBTap.m in Sources */,
 				641EE6262240C5CA00173FCB /* FBMathUtils.m in Sources */,
@@ -2906,7 +2907,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C53027242289310058E630 /* AQISocketIoClient.h in Sources */,
 				EE158AC71CBD456F00A3E3F0 /* FBScreenshotCommands.m in Sources */,
 				EEEC7C931F21F27A0053426C /* FBPredicate.m in Sources */,
 				7136A47A1E8918E60024FC3D /* XCUIElement+FBPickerWheel.m in Sources */,
@@ -2924,7 +2924,6 @@
 				71555A3E1DEC460A007D4A8B /* NSExpression+FBFormat.m in Sources */,
 				AD6C269D1CF2494200F8B5FF /* XCUIApplication+FBHelpers.m in Sources */,
 				EE3A18671CDE734B00DE4205 /* FBKeyboard.m in Sources */,
-				3617BC5624256FAD003A6B02 /* AQISourceCommands.m in Sources */,
 				713C6DD01DDC772A00285B92 /* FBElementUtils.m in Sources */,
 				7140974C1FAE1B51008FB2C5 /* FBW3CActionsSynthesizer.m in Sources */,
 				EE158AFA1CBD456F00A3E3F0 /* FBApplicationProcessProxy.m in Sources */,
@@ -2937,6 +2936,7 @@
 				C8FB547A22D4C1FC00B69954 /* FBUnattachedAppLauncher.m in Sources */,
 				EE158ADF1CBD456F00A3E3F0 /* FBRoute.m in Sources */,
 				EE0D1F621EBCDCF7006A3123 /* NSString+FBVisualLength.m in Sources */,
+				36C5780024291E72003B637C /* AQISourceCommands.m in Sources */,
 				EEE9B4731CD02B88009D2030 /* FBRunLoopSpinner.m in Sources */,
 				719CD8F92126C78F00C7D0C2 /* FBAlertsMonitor.m in Sources */,
 				71A7EAFA1E224648001DA4F2 /* FBClassChainQueryParser.m in Sources */,
@@ -2980,7 +2980,6 @@
 				EE158AC91CBD456F00A3E3F0 /* FBSessionCommands.m in Sources */,
 				EE006EB11EBA1AA9006900A4 /* XCElementSnapshot+FBHitPoint.m in Sources */,
 				EE9B76A71CF7A43900275851 /* FBConfiguration.m in Sources */,
-				36AA6DD1242151D600287C9B /* AQISocketIoClient.m in Sources */,
 				EE158AD31CBD456F00A3E3F0 /* FBElementCache.m in Sources */,
 				71930C4320662E1F00D3AFEC /* FBPasteboard.m in Sources */,
 				AD6C26951CF2379700F8B5FF /* FBAlert.m in Sources */,
@@ -2992,6 +2991,7 @@
 				EE158AF61CBD456F00A3E3F0 /* FBApplication.m in Sources */,
 				715AFAC21FFA29180053896D /* FBScreen.m in Sources */,
 				71B155DC230711E900646AFB /* FBCommandStatus.m in Sources */,
+				36C577F724291E64003B637C /* AQISocketIoClient.m in Sources */,
 				EE35AD7C1E3B80C000A02D78 /* FBXCTestDaemonsProxy.m in Sources */,
 				EE158AB51CBD456F00A3E3F0 /* XCUIElement+FBTap.m in Sources */,
 				EE18883B1DA661C400307AA8 /* FBMathUtils.m in Sources */,
