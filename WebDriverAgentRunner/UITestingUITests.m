@@ -34,10 +34,11 @@
  */
 - (void)testRunner
 {
-  AQISocketIoClient *socketClient = [[AQISocketIoClient alloc] init];
-  [socketClient setupHandlers];
-  [socketClient connect];
-  [socketClient startScreenshotStreaming];
+// TODO: Disabled for now
+//  AQISocketIoClient *socketClient = [[AQISocketIoClient alloc] init];
+//  [socketClient setupHandlers];
+//  [socketClient connect];
+//  [socketClient startScreenshotStreaming];
   
   FBWebServer *webServer = [[FBWebServer alloc] init];
   webServer.delegate = self;
